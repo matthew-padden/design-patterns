@@ -1,18 +1,26 @@
-﻿namespace FactoryPattern
+﻿namespace GameConsole.Cli
 {
     using System;
-    using FactoryPattern.GameLoader;
-    using FactoryPattern.Games;
+    using GameConsole.Core.Domain;
+    using GameConsole.Core.Domain.Interpreters;
+    using GameConsole.Core.Loader;
 
     public class Program
     {
         public static void Main(string[] args)
         {
-            while (true)
-                Run();
+            var context = new GameContext();
+
+            context.UserInput = GetGameSelectionInput();
+
+            context.Interpreter = new GameSelectionInterpreter();
+            context.Interpreter.Interpret(context);
+
+            context.Game = GameFactory.Create(context.GameType);
+            context.Game.Play();
         }
 
-        private static void Run()
+        private static string GetGameSelectionInput()
         {
             Console.Clear();
 
@@ -21,20 +29,7 @@
             Console.WriteLine("1: Donkey Kong");
             Console.Write("> ");
 
-            var gameInput = Console.ReadLine();
-            IGame game;
-
-            try
-            {
-                game = GameFactory.Create((GameType)int.Parse(gameInput)); // should use an interpreter here
-                game.Play();                
-            }
-            catch (ArgumentException ex)
-            {
-                Console.Write("Error: {0}", ex.Message);
-            }
-
-            Console.ReadKey();
+            return Console.ReadLine();
         }
     }
 }

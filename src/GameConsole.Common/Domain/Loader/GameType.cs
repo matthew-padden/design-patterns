@@ -1,4 +1,4 @@
-﻿namespace FactoryPattern.GameLoader
+﻿namespace GameConsole.Common.Domain.Loader
 {
     public enum GameType
     {
