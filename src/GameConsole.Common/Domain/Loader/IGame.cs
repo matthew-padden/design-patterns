@@ -1,4 +1,4 @@
-﻿namespace FactoryPattern.Games
+﻿namespace GameConsole.Common.Domain.Loader
 {
     public interface IGame
     {

@@ -1,7 +1,8 @@
-﻿namespace FactoryPattern.GameLoader
+﻿namespace GameConsole.Core.Domain.Loader
 {
     using System;
-    using FactoryPattern.Games;
+    using GameConsole.Common.Domain.Loader;
+    using GameConsole.Core.Domain.Games;
 
     public static class GameFactory
     {
