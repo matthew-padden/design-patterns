@@ -1,4 +1,4 @@
-﻿namespace GameConsole.Common.Domain.Loader
+﻿namespace GameConsole.Common.Loader
 {
     public interface IGame
     {

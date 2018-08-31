@@ -1,7 +1,7 @@
 ﻿namespace GameConsole.Core.Domain.Games
 {
     using System;
-    using GameConsole.Common.Domain.Loader;
+    using GameConsole.Common.Loader;
 
     public class Mario : IGame
     {

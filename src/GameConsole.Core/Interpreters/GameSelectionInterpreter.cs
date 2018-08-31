@@ -1,8 +1,8 @@
-﻿namespace GameConsole.Core.Domain.Interpreters
+﻿namespace GameConsole.Core.Interpreters
 {
     using GameConsole.Common;
-    using GameConsole.Common.Domain.Interpreters;
-    using GameConsole.Common.Domain.Loader;
+    using GameConsole.Common.Interpreters;
+    using GameConsole.Common.Loader;
 
     public class GameSelectionInterpreter : Expression
     {

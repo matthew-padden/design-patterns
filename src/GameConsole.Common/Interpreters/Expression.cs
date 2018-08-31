@@ -1,4 +1,4 @@
-﻿namespace GameConsole.Common.Domain.Interpreters
+﻿namespace GameConsole.Common.Interpreters
 {
     using GameConsole.Common;
 

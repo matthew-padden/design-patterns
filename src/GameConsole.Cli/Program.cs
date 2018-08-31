@@ -2,7 +2,6 @@
 {
     using System;
     using GameConsole.Core.Domain;
-    using GameConsole.Core.Domain.Interpreters;
     using GameConsole.Core.Domain.Loader;
 
     public class Program
@@ -12,24 +11,21 @@
             var context = new GameContext();
 
             context.UserInput = GetPlayerNameInput();
-            context.Interpreter = new PlayerInterpreter(); 
-            context.Interpreter.Interpret(context);
+            context.Interpret(); // how do we change the interpreter?
 
             Console.WriteLine("Welcome {0}", context.Player);
             Console.ReadKey();
 
             Console.Clear();
             context.UserInput = GetGameSelectionInput();
-            context.Interpreter = new GameSelectionInterpreter();
-            context.Interpreter.Interpret(context);
+            context.Interpret(); // will still be using the same default interpreter
 
             Console.Clear();
             context.Game = GameFactory.Create(context.GameType);
             context.Game.Play();
 
             context.UserInput = GetCommandInput();
-            context.Interpreter = new CommandInterpreter();
-            context.Interpreter.Interpret(context);
+            context.Interpret(); // will still be using the same default interpreter
 
             Console.ReadKey();
         }
@@ -45,7 +41,6 @@
             Console.WriteLine("1. Mario");
             Console.WriteLine("2. Donkey Kong");
             Console.Write("Please select a game: ");
-
             return Console.ReadLine();
         }
 

@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameConsole.Core", "src\Gam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameConsole.Common", "src\GameConsole.Common\GameConsole.Common.csproj", "{75B8C93D-9B9F-4191-B681-4C00CC7EC9C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameConsole.Data", "src\GameConsole.Data\GameConsole.Data.csproj", "{12D4B339-FDD0-4D62-8CF6-D73412128365}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{75B8C93D-9B9F-4191-B681-4C00CC7EC9C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75B8C93D-9B9F-4191-B681-4C00CC7EC9C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75B8C93D-9B9F-4191-B681-4C00CC7EC9C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12D4B339-FDD0-4D62-8CF6-D73412128365}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12D4B339-FDD0-4D62-8CF6-D73412128365}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12D4B339-FDD0-4D62-8CF6-D73412128365}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12D4B339-FDD0-4D62-8CF6-D73412128365}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

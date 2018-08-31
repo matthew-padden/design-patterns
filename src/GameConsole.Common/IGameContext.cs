@@ -1,12 +1,13 @@
 ﻿namespace GameConsole.Common
 {
-    using GameConsole.Common.Domain.Interpreters;
-    using GameConsole.Common.Domain.Loader;
     using GameConsole.Common.Game;
+    using GameConsole.Common.Loader;
 
     public interface IGameContext
     {
-        Expression Interpreter { get; set; }
+        GameStateType GameStateType { get; set; }
+
+        GameState GameState { get; set; }
 
         GameType GameType { get; set; }
 

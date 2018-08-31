@@ -1,7 +1,7 @@
 ﻿namespace GameConsole.Core.Domain.Loader
 {
     using System;
-    using GameConsole.Common.Domain.Loader;
+    using GameConsole.Common.Loader;
     using GameConsole.Core.Domain.Games;
 
     public static class GameFactory

@@ -1,8 +1,8 @@
 ﻿namespace GameConsole.Core.Domain.Interpreters
 {
     using GameConsole.Common;
-    using GameConsole.Common.Domain.Interpreters;
     using GameConsole.Common.Game;
+    using GameConsole.Common.Interpreters;
 
     public class CommandInterpreter : Expression
     {
