@@ -1,4 +1,4 @@
-﻿namespace GameConsole.Core.Loader
+﻿namespace GameConsole.Core.Domain.Loader
 {
     using System;
     using GameConsole.Common.Domain.Loader;

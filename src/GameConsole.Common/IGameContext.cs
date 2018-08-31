@@ -2,6 +2,7 @@
 {
     using GameConsole.Common.Domain.Interpreters;
     using GameConsole.Common.Domain.Loader;
+    using GameConsole.Common.Game;
 
     public interface IGameContext
     {
@@ -14,5 +15,7 @@
         string Player { get; set; }
 
         string UserInput { get; set; }
+
+        CommandType CurrentCommand { get; set; }
     }
 }

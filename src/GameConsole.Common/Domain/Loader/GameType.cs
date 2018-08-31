@@ -2,7 +2,7 @@
 {
     public enum GameType
     {
-        Mario,
+        Mario = 1,
         DonkeyKong
     }
 }
