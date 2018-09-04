@@ -5,6 +5,8 @@
 
     public interface IGameContext
     {
+        GameHandler GameHandler { get; set; }
+
         GameStateType GameStateType { get; set; }
 
         GameState GameState { get; set; }

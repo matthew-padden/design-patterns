@@ -1,26 +1,35 @@
-﻿namespace GameConsole.Core.Domain
+﻿namespace GameConsole.Core
 {
     using GameConsole.Common;
     using GameConsole.Common.Game;
     using GameConsole.Common.Loader;
-    using GameConsole.Core.Game;
+    using GameConsole.Core.Game.Handlers;
 
     public class GameContext : IGameContext
     {
+        private readonly GameHandler playerLoadHandler = new PlayerLoadHandler();
+        private readonly GameHandler gameSelectionHandler = new GameSelectionHandler();
+        private readonly GameHandler gameCommandHandler = new GameCommandHandler();
+
         #region Constructors
 
         public GameContext()
         {
-            this.GameState = new LoadPlayerState();
+            // chaining
+            this.playerLoadHandler.SetSuccessor(this.gameSelectionHandler);
+            this.gameSelectionHandler.SetSuccessor(this.gameCommandHandler);
+            this.GameHandler = this.playerLoadHandler;
         }
 
         #endregion
 
         #region Properties
 
+        public GameHandler GameHandler { get; set; }
+
         public GameStateType GameStateType { get; set; }
 
-        public GameState GameState { get; set; }        
+        public GameState GameState { get; set; }
 
         public GameType GameType { get; set; }
 
@@ -36,9 +45,9 @@
 
         #region Methods
 
-        public void Interpret()
+        public void Start() // fascade pattern to defer the responsibility to the GameHandler
         {
-            GameState.Interpret(this);
+            this.GameHandler.Process(this);
         }
 
         #endregion
