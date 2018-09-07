@@ -17,8 +17,6 @@
 
         string Player { get; set; }
 
-        string UserInput { get; set; }
-
         CommandType CurrentCommand { get; set; }
     }
 }

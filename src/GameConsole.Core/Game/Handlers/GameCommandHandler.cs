@@ -7,11 +7,8 @@
     {
         public override void HandleRequest(IGameContext context)
         {
-            if (context.Game != null)
-            {
-                context.GameStateType = GameStateType.Playing;
-                context.GameState = new GameCommandState();
-            }                
+            context.GameStateType = GameStateType.Playing;
+            context.GameState = new GameCommandState();
         }
     }
 }

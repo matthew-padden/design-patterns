@@ -7,6 +7,7 @@
 
     public class GameContext : IGameContext
     {
+        // chain of responsibility pattern
         private readonly GameHandler playerLoadHandler = new PlayerLoadHandler();
         private readonly GameHandler gameSelectionHandler = new GameSelectionHandler();
         private readonly GameHandler gameCommandHandler = new GameCommandHandler();
@@ -37,15 +38,13 @@
 
         public string Player { get; set; }
 
-        public string UserInput { get; set; }
-
         public CommandType CurrentCommand { get; set; }
 
         #endregion
 
         #region Methods
 
-        public void Start() // fascade pattern to defer the responsibility to the GameHandler
+        public void Start() // example of implementing the fascade pattern to defer the responsibility to the GameHandler
         {
             this.GameHandler.Process(this);
         }

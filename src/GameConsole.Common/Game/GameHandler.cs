@@ -18,9 +18,15 @@ namespace GameConsole.Common.Game
             context.GameState.LoadState(context);
             context.GameState.DisplayPrompt(context);
 
-            context.UserInput = Console.ReadLine();
+            var command = new Command();
+            command.UserInput = Console.ReadLine();
 
-            context.GameState.Interpret(context);
+            // TODO: Do stuff with command
+
+            context.CurrentCommand = command.CommandType;
+
+            context.GameState.Interpret(command);
+            context.GameState.Process(context);
             context.GameState.DisplayResponse(context);
             context.GameState.UnloadState(context);
 

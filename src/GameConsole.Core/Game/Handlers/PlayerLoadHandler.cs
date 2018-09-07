@@ -6,9 +6,9 @@
     public class PlayerLoadHandler : GameHandler
     {
         public override void HandleRequest(IGameContext context)
-        {            
-            context.GameStateType = GameStateType.LoadPlayer;
-            context.GameState = new LoadPlayerState();
+        {
+            if (!string.IsNullOrWhiteSpace(context.Player))
+                context.GameStateType = GameStateType.GameSelection;
         }
     }
 }

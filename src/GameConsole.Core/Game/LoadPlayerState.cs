@@ -11,20 +11,24 @@
         {
         }
 
+        public override void LoadState(IGameContext context)
+        {
+            context.GameStateType = GameStateType.LoadPlayer;
+        }
+
         public override void DisplayPrompt(IGameContext context)
         {
             Console.Write("Please input player name: ");
         }
 
+        public override void Interpret(ICommand command)
+        {
+            this.Interpreter.Interpret(command);
+        }        
+
         public override void DisplayResponse(IGameContext context)
         {
             Console.WriteLine("Welcome {0}", context.Player);
-        }
-
-        public override void Interpret(IGameContext context)
-        {
-            context.GameStateType = GameStateType.LoadPlayer;
-            this.Interpreter.Interpret(context);
         }
     }
 }

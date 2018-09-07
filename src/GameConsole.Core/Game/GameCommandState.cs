@@ -11,20 +11,23 @@
         {
         }
 
+        public override void LoadState(IGameContext context)
+        {
+            context.GameStateType = GameStateType.Playing;
+        }
+
         public override void DisplayPrompt(IGameContext context)
         {
             Console.Write("Please input a command: ");
         }       
 
-        public override void Interpret(IGameContext context)
+        public override void Interpret(ICommand command)
         {
-            context.GameStateType = GameStateType.Playing;
-            this.Interpreter.Interpret(context);
+            this.Interpreter.Interpret(command);
         }
 
         public override void DisplayResponse(IGameContext context)
         {
-            Console.WriteLine("Welcome {0}", context.Player);
         }
     }
 }

@@ -13,13 +13,15 @@
 
         protected Expression Interpreter => this.interpreter;
 
-        public virtual void LoadState(IGameContext context)
-        {
-        }
+        public abstract void LoadState(IGameContext context);
 
         public abstract void DisplayPrompt(IGameContext context);
 
-        public abstract void Interpret(IGameContext context);
+        public abstract void Interpret(ICommand command);
+
+        public virtual void Process(IGameContext context)
+        {
+        }
 
         public abstract void DisplayResponse(IGameContext context);
 

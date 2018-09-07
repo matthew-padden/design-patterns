@@ -6,9 +6,9 @@
 
     public class GameSelectionInterpreter : Expression
     {
-        public override void Interpret(IGameContext context)
+        public override void Interpret(ICommand command)
         {
-            context.GameType = (GameType)int.Parse(context.UserInput); // bad algorithm but it works
+            //context.GameType = (GameType)int.Parse(context.UserInput); // bad algorithm but it works
         }
     }
 }
